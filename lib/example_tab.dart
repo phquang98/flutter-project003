@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// First app: https://docs.flutter.dev/cookbook/design/tabs
 class TabBarDemo extends StatelessWidget {
   const TabBarDemo({super.key});
 
