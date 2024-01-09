@@ -16,22 +16,25 @@ class TodoCltScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: const Text('Todo Clt')),
-        body: ListView.builder(
-          itemCount: todoClt.length,
-          itemBuilder: (context, index) {
-            return ListTile(
-              title: Text(todoClt[index].title),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) =>
-                            TodoItemScreen(todoItem: todoClt[index])));
-              },
-            );
-          },
-        ));
+      appBar: AppBar(title: const Text('Todo Clt')),
+      body: ListView.builder(
+        itemCount: todoClt.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            title: Text(todoClt[index].title),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) =>
+                      TodoItemScreen(todoItem: todoClt[index]),
+                ),
+              );
+            },
+          );
+        },
+      ),
+    );
   }
 }
 
@@ -44,12 +47,13 @@ class TodoItemScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text(todoItem.title),
-        ),
-        body: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Text(todoItem.description),
-        ));
+      appBar: AppBar(
+        title: Text(todoItem.title),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Text(todoItem.description),
+      ),
+    );
   }
 }
